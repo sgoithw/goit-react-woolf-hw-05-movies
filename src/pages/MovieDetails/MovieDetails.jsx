@@ -10,6 +10,9 @@ const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [backUrl, setBackUrl] = useState(
+    location.state ? location.state.from : null
+  );
 
   useEffect(() => {
     setIsLoading(true);
@@ -22,10 +25,16 @@ const MovieDetails = () => {
       .finally(() => setIsLoading(false));
   }, [movieId]);
 
+  useEffect(() => {
+    if (location.state) {
+      setBackUrl(location.state.from);
+    }
+  }, [location.state]);
+
   return (
     <>
-      {location.state && (
-        <Link to={location.state.from}>
+      {backUrl && (
+        <Link to={backUrl}>
           <button>Go back</button>
         </Link>
       )}
