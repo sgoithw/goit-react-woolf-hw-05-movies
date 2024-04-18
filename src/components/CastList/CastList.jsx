@@ -29,15 +29,23 @@ const CastList = () => {
     return <Error error={error} />;
   }
 
+  if (cast.length === 0) {
+    return (
+      <p className={styles.noCast}>We don't have any cast for this movie.</p>
+    );
+  }
+
   return (
     <ul>
       {cast.map(({ id, name, character, profile_path }) => (
         <li key={id}>
-          <img
-            src={`https://image.tmdb.org/t/p/w500${profile_path}`}
-            alt={name}
-            width="100"
-          />
+          {profile_path && (
+            <img
+              src={`https://image.tmdb.org/t/p/w500${profile_path}`}
+              alt={name}
+              width="100"
+            />
+          )}
           <p>{name}</p>
           <p>Character: {character}</p>
         </li>

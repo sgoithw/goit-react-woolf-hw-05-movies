@@ -32,8 +32,6 @@ const Movies = () => {
 
   return (
     <div className={style.moviesSearch}>
-      <h1>Movie Search</h1>
-
       <MovieSearchForm onSearch={handleSearch} />
       {isLoading && <Loader />}
       {!isLoading && <MoviesList movies={movies} />}

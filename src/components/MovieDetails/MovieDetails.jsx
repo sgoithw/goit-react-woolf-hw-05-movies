@@ -5,23 +5,29 @@ const MovieDetails = ({ movie }) => {
   return (
     <>
       <div className={style.movieDetails}>
-        <img
-          src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-          alt={movie.title ?? movie.name}
-        />
-        <h1>{movie.title ?? movie.name}</h1>
-
-        <p>User score {movie.popularity}</p>
-        <h2>Overview</h2>
-        <p>{movie.overview}</p>
-        <h3>Genres</h3>
-        <ul>
-          {movie.genres.map(genre => (
-            <li key={genre.id}>{genre.name}</li>
-          ))}
-        </ul>
+        {movie.poster_path && (
+          <img
+            className={style.poster}
+            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+            alt={movie.title ?? movie.name}
+          />
+        )}
+        <div className={style.description}>
+          <h1 className={style.descriptionTitle}>
+            {movie.title ?? movie.name}
+          </h1>
+          <p>User score {movie.popularity}</p>
+          <h2 className={style.descriptionTitle}>Overview</h2>
+          <p>{movie.overview}</p>
+          <h3 className={style.descriptionTitle}>Genres</h3>
+          <ul className={style.genres}>
+            {movie.genres.map(genre => (
+              <li key={genre.id}>{genre.name}</li>
+            ))}
+          </ul>
+        </div>
       </div>
-      <div>
+      <div className={style.additional}>
         <h3>Additional information</h3>
         <ul>
           <li>
