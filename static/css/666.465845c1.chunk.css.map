@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/666.465845c1.chunk.css","mappings":"AAAA,iCAGE,UAAW,CAFX,cAAe,CACf,eAEF","sources":["pages/NotFound/NotFound.module.css"],"sourcesContent":[".notFoundMessave {\n  font-size: 24px;\n  font-weight: 600;\n  color: #333;\n}\n"],"names":[],"sourceRoot":""}
