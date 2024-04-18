@@ -1,7 +1,6 @@
 import { BrowserRouter as Router } from 'react-router-dom';
 import SharedLayout from 'layout/SharedLayout/SharedLayout.jsx';
 import { Route, Routes } from 'react-router-dom';
-import { routes } from 'routes';
 import ReviewsList from './ReviewsList/ReviewsList';
 import CastList from './CastList/CastList';
 import { lazy, Suspense } from 'react';

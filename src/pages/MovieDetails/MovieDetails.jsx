@@ -1,5 +1,4 @@
 import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
-import styel from './MovieDetails.module.css';
 import { getMovieDetails } from 'api/movieDBApi';
 import { useEffect, useState } from 'react';
 import { Error, Loader, MovieDetails as MD } from 'components';
