@@ -10,7 +10,7 @@ const MovieDetails = () => {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [backUrl, setBackUrl] = useState(
-    location.state ? location.state.from : null
+    location.state ? location.state?.from ?? null : null
   );
 
   useEffect(() => {

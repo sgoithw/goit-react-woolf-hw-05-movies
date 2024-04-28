@@ -1,17 +1,25 @@
 import { NavLink } from 'react-router-dom';
 import style from './MovieDetails.module.css';
 
+const defaultImg =
+  'https://glavcom.ua/img/article/9139/95_main-v1678685008.jpg';
+
 const MovieDetails = ({ movie }) => {
   return (
     <>
       <div className={style.movieDetails}>
-        {movie.poster_path && (
+        {
           <img
             className={style.poster}
-            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+            src={
+              movie.poster_path
+                ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+                : defaultImg
+            }
+            width={250}
             alt={movie.title ?? movie.name}
           />
-        )}
+        }
         <div className={style.description}>
           <h1 className={style.descriptionTitle}>
             {movie.title ?? movie.name}
