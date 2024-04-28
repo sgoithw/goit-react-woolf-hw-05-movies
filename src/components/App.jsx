@@ -1,4 +1,3 @@
-import { BrowserRouter as Router } from 'react-router-dom';
 import SharedLayout from 'layout/SharedLayout/SharedLayout.jsx';
 import { Route, Routes } from 'react-router-dom';
 import ReviewsList from './ReviewsList/ReviewsList';
